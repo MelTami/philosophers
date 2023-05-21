@@ -19,12 +19,12 @@ RM				= rm -rf
 			
 PATH_INCLUDES	= ./includes/
 PATH_OBJS		= ./objects/
-PATH_SRCS		= ./sources/
+PATH_SRCS		= ./srcs/
 PATH_LIBFT		= ./libft
 
 SRCS			= philosophers.c \
 					$(addprefix $(PATH_SRCS), \
-					)
+					check_error.c)
 LFLAGS			= -L $(PATH_LIBFT) -lft
 OBJS 			= $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 INCLUDES		= -I $(PATH_INCLUDES)

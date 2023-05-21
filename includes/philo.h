@@ -16,4 +16,47 @@
 #include "../libft/libft.h"
 #include <pthread.h>
 
+# define FALSE 0
+# define TRUE 1
+
+typedef struct s_input
+{
+	int				num_philo;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				num_of_times_eat;
+}	t_input;
+
+typedef struct s_fork
+{
+	int				left;
+	int				right;
+}	t_fork;
+
+typedef struct s_philo
+{
+	int				id;
+	int				num_of_times_ate;
+	long long		time_to_die;
+	t_fork			fork;
+	pthread_t		thread;
+}	t_philo;
+
+typedef struct s_main
+{
+	int				n_thread;
+	int				philo_dead;
+	long long		t0;
+	t_input			input;
+	t_philo			*philo;
+	pthread_t		orchestrator;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	write;
+}	t_main;
+
+
+
+int check_error(int argc, char *argv[], t_main **main);
+
 #endif

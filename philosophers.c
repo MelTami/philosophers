@@ -14,6 +14,9 @@
 
 int main(int arc, char *argv[])
 {
-	
+	t_main	main;
+
+	if (check_error(argc, argv, &main) == FALSE)
+		return(1);
 	return (0);
 }
