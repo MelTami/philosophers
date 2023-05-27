@@ -13,11 +13,19 @@
 #ifndef PHILO_H
 # define PHILO_H
 
-#include "../libft/libft.h"
-#include <pthread.h>
+# include "../libft/libft.h"
+# include <pthread.h>
 
 # define FALSE 0
 # define TRUE 1
+
+# define INT_MAX 2147483647
+
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define FORK "has taken a fork"
+# define DIED "died ☠️"
 
 typedef struct s_input
 {
@@ -55,8 +63,8 @@ typedef struct s_main
 	pthread_mutex_t	write;
 }	t_main;
 
-
-
-int check_error(int argc, char *argv[], t_main **main);
+int	check_error(int argc, char *argv[], t_main *main);
+int	init_input(int argc, char *argv[], t_main *main);
+int	philo_atoi(char *str);
 
 #endif

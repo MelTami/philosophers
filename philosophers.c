@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
+#include "includes/philo.h"
 
-int main(int arc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_main	main;
 
 	if (check_error(argc, argv, &main) == FALSE)
-		return(1);
+		return (1);
+	ft_printf("Worked\n");
 	return (0);
 }

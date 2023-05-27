@@ -24,7 +24,8 @@ PATH_LIBFT		= ./libft
 
 SRCS			= philosophers.c \
 					$(addprefix $(PATH_SRCS), \
-					check_error.c)
+					check_error.c \
+					philo_utils.c)
 LFLAGS			= -L $(PATH_LIBFT) -lft
 OBJS 			= $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 INCLUDES		= -I $(PATH_INCLUDES)
