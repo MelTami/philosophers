@@ -16,6 +16,8 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 # define FALSE 0
 # define TRUE 1
@@ -37,31 +39,24 @@ typedef struct s_data
 	int				num_of_times_eat;
 }	t_data;
 
-typedef struct s_fork
+typedef struct s_forks
 {
-	int				left;
-	int				right;
-}	t_fork;
+	pthread_mutex_t	mutex;
+}	t_forks;
 
 typedef struct s_philo
 {
-	int				id;
-	int				num_of_times_ate;
-	long long		time_to_die;
-	t_fork			fork;
+	int				rfork;
+	int				lfork;
 	pthread_t		thread;
+	t_forks			*forks;
 }	t_philo;
 
 typedef struct s_main
 {
-	int				n_thread;
-	int				philo_dead;
-	long long		t0;
+	int				num_forks;
 	t_data			data;
 	t_philo			*philo;
-	pthread_t		orchestrator;
-	pthread_mutex_t	*forks;
-	pthread_mutex_t	write;
 }	t_main;
 
 int	check_numbers(char *argv[]);
@@ -69,5 +64,8 @@ int	init_input(int argc, char *argv[], t_main *main);
 int	philo_atoi(char *str);
 int	check_error(int argc, char *argv[], t_main *main);
 int	philo_isdigit(char *nb);
+int    init_philo(t_main *main);
+void *routine();
+void    creat_philos(t_main *main);
 
 #endif

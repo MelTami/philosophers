@@ -18,6 +18,7 @@ int	main(int argc, char *argv[])
 
 	if (check_error(argc, argv, &main) == FALSE)
 		return (FALSE);
-	printf("To funcionando\n");
+	creat_philos(&main);
+	init_philo(&main);
 	return (0);
 }
