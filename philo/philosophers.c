@@ -18,6 +18,6 @@ int	main(int argc, char *argv[])
 
 	if (check_error(argc, argv, &main) == FALSE)
 		return (FALSE);
-	ft_printf("To funcionando\n");
+	printf("To funcionando\n");
 	return (0);
 }

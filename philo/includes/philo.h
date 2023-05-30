@@ -13,9 +13,9 @@
 #ifndef PHILO_H
 # define PHILO_H
 
-# include "../libft/libft.h"
 # include <pthread.h>
- #include <sys/time.h>
+# include <sys/time.h>
+# include <stdio.h>
 
 # define FALSE 0
 # define TRUE 1

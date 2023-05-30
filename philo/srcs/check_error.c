@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:21:30 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/05/30 21:02:15 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:26:58 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	check_error(int argc, char *argv[], t_main *main)
 {
 	if (argc < 5)
 	{
-		ft_printf("You need to put at least 4 or 5 arguments\n");
+		printf("You need to put at least 4 or 5 arguments\n");
 		return (FALSE);
 	}
 	else if (check_numbers(argv) == FALSE)
 	{
-		ft_printf("Some arguments are wrong, test numbers\n");
+		printf("Some arguments are wrong, test numbers\n");
 		return (FALSE);
 	}
 	else

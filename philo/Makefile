@@ -20,21 +20,18 @@ RM				= rm -rf
 PATH_INCLUDES	= ./includes/
 PATH_OBJS		= ./objects/
 PATH_SRCS		= ./srcs/
-PATH_LIBFT		= ./libft
 
 SRCS			= philosophers.c \
 					$(addprefix $(PATH_SRCS), \
 					check_error.c \
 					philo_utils.c)
-LFLAGS			= -L $(PATH_LIBFT) -lft
 OBJS 			= $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 INCLUDES		= -I $(PATH_INCLUDES)
 
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	@ make -C $(PATH_LIBFT)
-	@ clang $(CFLAGS) $(OBJS) $(LFLAGS) -o $(NAME)
+	@ clang $(CFLAGS) $(OBJS) -o $(NAME)
 	@ echo -e '\033[0;32m[SUCCESS]\033[0m Compilation done!'
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
