@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/05/30 21:02:02 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:15:12 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	philo_atoi(char *str)
 int	check_numbers(char *argv[])
 {
 	int	i;
-	
+
 	i = 1;
 	while (argv[i])
 	{

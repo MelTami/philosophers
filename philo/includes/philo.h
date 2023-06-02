@@ -59,13 +59,13 @@ typedef struct s_main
 	t_philo			*philo;
 }	t_main;
 
-int	check_numbers(char *argv[]);
-int	init_input(int argc, char *argv[], t_main *main);
-int	philo_atoi(char *str);
-int	check_error(int argc, char *argv[], t_main *main);
-int	philo_isdigit(char *nb);
-int    init_philo(t_main *main);
-void *routine();
-void    creat_philos(t_main *main);
+int		check_numbers(char *argv[]);
+int		init_input(int argc, char *argv[], t_main *main);
+int		philo_atoi(char *str);
+int		check_error(int argc, char *argv[], t_main *main);
+int		philo_isdigit(char *nb);
+int		init_philo(t_main *main);
+void	*routine(void *i);
+void	creat_philos(t_main *main);
 
 #endif
