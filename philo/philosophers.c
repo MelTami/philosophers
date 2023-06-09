@@ -16,11 +16,11 @@ int	main(int argc, char *argv[])
 {
 	t_main	main;
 
-	memset(&main, "\0", sizeof(t_main));
+	memset(&main, '\0', sizeof(t_main));
 	if (check_error(argc, argv, &main) == FALSE)
 		return (FALSE);
 	creat_philos(&main);
 	init_philo(&main);
-	free_all(&main);
+	ft_free(&main);
 	return (0);
 }

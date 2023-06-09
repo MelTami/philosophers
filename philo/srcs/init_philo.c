@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:37:40 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/03 00:21:02 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:38:29 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,4 @@ void	creat_philos(t_main *main)
 {
 	main->philo = malloc(sizeof(t_philo) * main->data.num_philo);
 	main->philo->forks = malloc(sizeof(t_forks) * main->num_forks);
-	
 }

@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/09 14:31:39 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:45:26 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,20 @@
 
 int	philo_atoi(char *str)
 {
-	int			i;
-	long int	n;
-
-	i = 0;
-	n = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = n * 10 + str[i] - '0';
-		i++;
-	}
-	if (n < 0 || ((str[i] < '0' || str[i] > '9') && str[i] != '\0')
-		|| n > INT_MAX)
-		return (0);
-	return (n);
-}
-
-int	check_numbers(char *argv[])
-{
+	int	res;
 	int	i;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	res = 0;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (philo_isdigit(argv[i]) == FALSE)
-			return (FALSE);
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	return (TRUE);
+	return (res);
 }
 
-int	philo_isdigit(char *nb)
+int	check_numbers(char *nb)
 {
 	int	i;
 
@@ -58,9 +41,22 @@ int	philo_isdigit(char *nb)
 	return (TRUE);
 }
 
-void	free_all(t_main *main)
+// int	destroy_threads(t_main *main)
+// {
+// 	int	i;
+
+// 	i = main->data.num_philo;
+// 	while (i)
+// 	{
+// 		pthread_mutex_destroy(&main->philo->forks[i]);
+// 		i--;
+// 	}
+// 	return (0);
+// }
+
+void	ft_free(t_main *main)
 {
 	free(main->philo);
-	free(main->forks);
-	destroy_threads(main);
+	free(main->philo->forks);
+	// destroy_threads(main);
 }
