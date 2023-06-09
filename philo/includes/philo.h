@@ -49,6 +49,7 @@ typedef struct s_philo
 {
 	int				rfork;
 	int				lfork;
+	int				id;
 	pthread_t		thread;
 	t_forks			*forks;
 }	t_philo;
@@ -56,17 +57,23 @@ typedef struct s_philo
 typedef struct s_main
 {
 	int				num_forks;
+	long int		start;
 	t_data			data;
 	t_philo			*philo;
+	pthread_mutex_t	*print;
 }	t_main;
 
-int		check_numbers(char *nb);
-int		init_input(int argc, char *argv[], t_main *main);
-int		philo_atoi(char *str);
-int		check_error(int argc, char *argv[], t_main *main);
-int		init_philo(t_main *main);
-void	*routine(void *i);
-void	creat_philos(t_main *main);
-void	ft_free(t_main *main);
+int			check_numbers(char *nb);
+int			init_input(int argc, char *argv[], t_main *main);
+int			philo_atoi(char *str);
+int			check_error(int argc, char *argv[], t_main *main);
+int			init_philo(t_main *main);
+void		*routine(void *i);
+void		creat_philos(t_main *main);
+void		ft_free(t_main *main);
+void		start_life(t_main *main);
+int			print_status(long int now, t_main *main, char *status);
+long int	get_now(void);
+
 
 #endif

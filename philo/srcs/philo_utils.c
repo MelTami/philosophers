@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/09 17:45:26 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/09 19:45:03 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,12 @@ void	ft_free(t_main *main)
 	free(main->philo);
 	free(main->philo->forks);
 	// destroy_threads(main);
+}
+
+long int	get_now(void)
+{
+	struct timeval	time;
+
+	gettimeofday(&time, NULL);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }

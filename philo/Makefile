@@ -26,7 +26,9 @@ SRCS			= philosophers.c \
 					$(addprefix $(PATH_SRCS), \
 					check_error.c \
 					philo_utils.c \
-					init_philo.c)
+					init_philo.c \
+					start_philo.c \
+					print_functions.c)
 OBJS 			= $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 INCLUDES		= -I $(PATH_INCLUDES)
 
