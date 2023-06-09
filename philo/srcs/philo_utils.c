@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/02 15:15:12 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:31:39 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,11 @@ int	philo_isdigit(char *nb)
 		i++;
 	}
 	return (TRUE);
+}
+
+void	free_all(t_main *main)
+{
+	free(main->philo);
+	free(main->forks);
+	destroy_threads(main);
 }
