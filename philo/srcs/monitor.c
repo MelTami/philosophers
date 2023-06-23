@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 14:42:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/23 17:03:20 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/23 20:13:10 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	should_stop(t_main *main)
 	have_ate_enough = 0;
 	while (i < main->num_philo)
 	{
-		if ((get_now() - main->philo[i].last_meal) > main->time_to_die)
+		if ((get_now() - main->philo[i].last_meal) >= main->time_to_die)
 		{
 			print_status(get_now(), main->philo, DIED);
 			return (1);
@@ -35,11 +35,11 @@ int	should_stop(t_main *main)
 	return (0);
 }
 
-void	*monitor_routine(void *sett)
+void	*monitor_routine(void *set)
 {
 	t_main	*main;
 
-	main = sett;
+	main = set;
 	while (!main->should_stop)
 	{
 		main->should_stop = should_stop(main);

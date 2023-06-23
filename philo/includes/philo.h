@@ -70,7 +70,7 @@ int			ft_free(t_main *main);
 int			start_life(t_main *main);
 int			print_status(long int now, t_philo *philo, char *status);
 long int	get_now(void);
-void		*monitor_routine(void *sett);
+void		*monitor_routine(void *set);
 int			should_stop(t_main *main);
 
 #endif
