@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/09 19:45:03 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:12:38 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,28 @@ int	check_numbers(char *nb)
 	return (TRUE);
 }
 
-// int	destroy_threads(t_main *main)
-// {
-// 	int	i;
+int	destroy_threads(t_main *main)
+{
+	int	i;
 
-// 	i = main->data.num_philo;
-// 	while (i)
-// 	{
-// 		pthread_mutex_destroy(&main->philo->forks[i]);
-// 		i--;
-// 	}
-// 	return (0);
-// }
+	i = main->num_philo;
+	while (i)
+	{
+		pthread_mutex_destroy(&main->forks[i]);
+		i--;
+	}
+	pthread_mutex_destroy(main->print);
+	return (0);
+}
 
-void	ft_free(t_main *main)
+int	ft_free(t_main *main)
 {
 	free(main->philo);
-	free(main->philo->forks);
-	// destroy_threads(main);
+	free(main->forks);
+	free(main->print);
+	destroy_threads(main);
+	free(main);
+	return (0);
 }
 
 long int	get_now(void)

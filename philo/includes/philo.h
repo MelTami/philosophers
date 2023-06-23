@@ -31,49 +31,46 @@
 # define FORK "has taken a fork"
 # define DIED "died ☠️"
 
-typedef struct s_data
-{
-	int				num_philo;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				num_of_times_eat;
-}	t_data;
-
-typedef struct s_forks
-{
-	pthread_mutex_t	mutex;
-}	t_forks;
+typedef struct s_main t_main;
 
 typedef struct s_philo
 {
 	int				rfork;
 	int				lfork;
 	int				id;
+	long int		last_meal;
+	int				ate;
 	pthread_t		thread;
-	t_forks			*forks;
+	t_main			*main;
 }	t_philo;
 
 typedef struct s_main
 {
 	int				num_forks;
+	int				num_philo;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				num_of_times_eat;
 	long int		start;
-	t_data			data;
+	int				should_stop;
+	pthread_t		monitor;
 	t_philo			*philo;
 	pthread_mutex_t	*print;
+	pthread_mutex_t	*forks;
 }	t_main;
 
 int			check_numbers(char *nb);
 int			init_input(int argc, char *argv[], t_main *main);
 int			philo_atoi(char *str);
 int			check_error(int argc, char *argv[], t_main *main);
-int			init_philo(t_main *main);
-void		*routine(void *i);
+void		*routine(void *philo);
 void		creat_philos(t_main *main);
-void		ft_free(t_main *main);
-void		start_life(t_main *main);
+int			ft_free(t_main *main);
+int			start_life(t_main *main);
 int			print_status(long int now, t_main *main, char *status);
 long int	get_now(void);
-
+void		*monitor_routine(void *sett);
+int			should_stop(t_main *main);
 
 #endif

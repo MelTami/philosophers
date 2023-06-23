@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/philo.h"
+#include "../includes/philo.h"
 
 int	main(int argc, char *argv[])
 {
@@ -19,8 +19,6 @@ int	main(int argc, char *argv[])
 	memset(&main, '\0', sizeof(t_main));
 	if (check_error(argc, argv, &main) == FALSE)
 		return (FALSE);
-	// creat_philos(&main);
-	// init_philo(&main);
 	start_life(&main);
 	ft_free(&main);
 	return (0);
