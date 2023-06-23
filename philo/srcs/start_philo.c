@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 19:14:14 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/23 20:05:22 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/23 20:40:54 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	eat(t_philo *philo)
 	pthread_mutex_unlock(&philo->main->forks[philo->rfork]);
 	pthread_mutex_unlock(&philo->main->forks[philo->lfork]);
 }
-
 
 void	*alone_philo(t_philo *philo)
 {

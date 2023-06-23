@@ -31,7 +31,7 @@
 # define FORK "has taken a fork"
 # define DIED "died ☠️"
 
-typedef struct s_main t_main;
+typedef struct s_main	t_main;
 
 typedef struct s_philo
 {
