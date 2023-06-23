@@ -19,6 +19,7 @@ int	main(int argc, char *argv[])
 	memset(&main, '\0', sizeof(t_main));
 	if (check_error(argc, argv, &main) == FALSE)
 		return (FALSE);
+	// main.start = get_now();
 	start_life(&main);
 	ft_free(&main);
 	return (0);

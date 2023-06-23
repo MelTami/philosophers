@@ -68,7 +68,7 @@ void		*routine(void *philo);
 void		creat_philos(t_main *main);
 int			ft_free(t_main *main);
 int			start_life(t_main *main);
-int			print_status(long int now, t_main *main, char *status);
+int			print_status(long int now, t_philo *philo, char *status);
 long int	get_now(void);
 void		*monitor_routine(void *sett);
 int			should_stop(t_main *main);

@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:02:54 by mvavasso          #+#    #+#             */
-/*   Updated: 2023/06/23 15:12:38 by mvavasso         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:24:18 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	ft_free(t_main *main)
 	free(main->forks);
 	free(main->print);
 	destroy_threads(main);
-	free(main);
 	return (0);
 }
 
